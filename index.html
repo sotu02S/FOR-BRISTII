@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sudeshna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Music Popup -->
+    <div class="music-overlay" id="musicOverlay">
+        <div class="music-modal">
+            <div class="modal-heart">💕</div>
+            <h2>Before we begin...</h2>
+            <p>Would you like to play our song while you explore?</p>
+            <p class="song-name">🎵 তোমাকে — Shreya Ghoshal</p>
+            <div class="modal-buttons">
+                <button class="modal-btn btn-yes" id="playMusicBtn">Yes, Play It ♪</button>
+                <button class="modal-btn btn-no" id="skipMusicBtn">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="তোমাকে- পরিণীতা by shreya ghoshal. Song without music (Vocal only). From singers Unplugged. [FOUKPTMpHHg].mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-toggle" id="musicToggle" title="Toggle Music">🔇</button>
+
+    <header class="hero">
+        <div class="glass-panel floating">
+            <h1 class="glow-text">For Sudeshna</h1>
+            <p>You are the reason my heart beats with purpose. Every moment with you is a memory I hold forever.</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <section class="counter-section hidden">
+        <h2>Our Time Together</h2>
+        <div class="counter-container">
+            <div class="time-box">
+                <span id="years">00</span>
+                <p>Years</p>
+            </div>
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section hidden">
+        <h2>Our Memories</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="IMG-20251228-WA0021.jpg" alt="Us together under the lights">
+                <div class="gallery-caption">Under the lights, with you ✨</div>
+            </div>
+            <div class="gallery-item">
+                <img src="IMG-20251115-WA0012.jpg" alt="You looking beautiful">
+                <div class="gallery-caption">The most beautiful soul 💕</div>
+            </div>
+            <div class="gallery-item">
+                <img src="1757067304360.jpg" alt="Together forever">
+                <div class="gallery-caption">You & me, always 💖</div>
+            </div>
+            <div class="gallery-item">
+                <img src="20260103_184846.jpg" alt="Our cozy moments">
+                <div class="gallery-caption">My favourite place — next to you 🤍</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reasons-section hidden">
+        <h2>Reasons Why I Love You</h2>
+        <div class="cards-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">😊</div>
+                        <h3>Your Smile</h3>
+                        <p class="flip-hint">Hover to read ❤️</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>The moment you smile, the whole world stops for a second. It is the most beautiful thing I have ever seen — it warms my soul, heals my worst days, and reminds me why I fell in love with you in the first place.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">💪</div>
+                        <h3>Your Strength</h3>
+                        <p class="flip-hint">Hover to read ❤️</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>You carry so much grace within you, even when the world feels heavy. You inspire me to never give up, to keep fighting, and to believe that love conquers everything. You are the strongest person I know, and I fall deeper for you every day.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">😂</div>
+                        <h3>Our Laughter</h3>
+                        <p class="flip-hint">Hover to read ❤️</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>The way we laugh together — that careless, breathless, tears-in-our-eyes kind of laughter — is something I would never trade for anything in this universe. You make even the ordinary moments feel magical and full of life.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">❤️</div>
+                        <h3>Your Kindness</h3>
+                        <p class="flip-hint">Hover to read ❤️</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Your heart is the purest thing I have ever known. The way you care for others, the way you love without conditions, and the way you always choose compassion over everything — it makes me grateful every single day that I get to call you mine.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">✨</div>
+                        <h3>Your Uniqueness</h3>
+                        <p class="flip-hint">Hover to read ❤️</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>In a world full of millions, there is no one — absolutely no one — like you. Your quirks, your voice, the way you see the world with those beautiful eyes of yours — every little detail about you is a masterpiece that I will never stop admiring.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-icon">🌟</div>
+                        <h3>Your Dreams</h3>
+                        <p class="flip-hint">Hover to read ❤️</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Watching you chase your dreams with fire in your eyes is the most inspiring thing I have ever witnessed. I promise to always be beside you, cheering for you, believing in you — because your dreams are my dreams too, and together we are unstoppable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quotes-section hidden">
+        <h2>A Message For You</h2>
+        <div class="quote-box">
+            <p class="quote-text">"I have waited my whole life without knowing I was waiting for you. And now that you are here, I want to spend every heartbeat, every breath, and every tomorrow proving that you are the most extraordinary love story I will ever know."</p>
+            <p class="quote-author">— Forever & Always Yours</p>
+        </div>
+    </section>
+
+    <section class="interactive-section hidden">
+        <h2>Click to Reveal</h2>
+        <div class="reveal-wrapper">
+            <button class="reveal-btn" id="revealBtn">❤️ Click Me ❤️</button>
+            <div class="heart-burst" id="heartBurst"></div>
+        </div>
+        <div class="hidden-message" id="hiddenMessage">
+            <div class="message-inner">
+                <span class="msg-decor">✨💕✨</span>
+                <p id="typewriterText"></p>
+                <span class="msg-decor">✨💕✨</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="hearts-container">
+            <span class="heart">♥</span>
+            <span class="heart">♥</span>
+            <span class="heart">♥</span>
+        </div>
+        <p>Made with every beat of my heart, only for you</p>
+        <p class="footer-date">Since February 8, 2022 — the day my life truly began</p>
+    </footer>
+
+    <div class="particles" id="particles"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
