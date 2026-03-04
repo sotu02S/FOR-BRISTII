@@ -214,3 +214,118 @@ flipCards.forEach(card => {
         flipCards.forEach(c => c.style.opacity = '1');
     });
 });
+
+// --- Mouse Cursor Trail ---
+const cursorTrail = document.getElementById('cursorTrail');
+
+window.addEventListener('mousemove', (e) => {
+    // Throttling trail particle creation slightly by random chance or time could be done, 
+    // but creating one on every mousemove gives a solid line.
+    createTrailParticle(e.clientX, e.clientY);
+});
+
+function createTrailParticle(x, y) {
+    if(!cursorTrail) return;
+    const dot = document.createElement('div');
+    dot.className = 'trail-particle';
+    dot.style.left = `${x}px`;
+    dot.style.top = `${y}px`;
+    cursorTrail.appendChild(dot);
+    
+    // Cleanup
+    setTimeout(() => {
+        dot.remove();
+    }, 800);
+}
+
+// --- Envelope Interaction ---
+const waxSeal = document.getElementById('waxSeal');
+const envelope = document.getElementById('envelope');
+const envelopeSparkles = document.getElementById('envelopeSparkles');
+
+function createEnvelopeSparkles() {
+    if (!envelopeSparkles) return;
+    const colors = ['#ff6987', '#ffd1dc', '#ff1f5a', '#ffb6c1', '#fff', '#ff4466'];
+    for (let i = 0; i < 30; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'envelope-sparkle';
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 60 + Math.random() * 100;
+        sparkle.style.setProperty('--sx', Math.cos(angle) * dist + 'px');
+        sparkle.style.setProperty('--sy', Math.sin(angle) * dist + 'px');
+        sparkle.style.left = '50%';
+        sparkle.style.top = '50%';
+        sparkle.style.width = (3 + Math.random() * 5) + 'px';
+        sparkle.style.height = sparkle.style.width;
+        sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        sparkle.style.boxShadow = `0 0 6px ${sparkle.style.background}`;
+        sparkle.style.animationDuration = (0.8 + Math.random() * 0.8) + 's';
+        envelopeSparkles.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 1600);
+    }
+}
+
+function toggleEnvelope() {
+    if (!envelope) return;
+    const wasOpen = envelope.classList.contains('open');
+    envelope.classList.toggle('open');
+    if (!wasOpen) {
+        createEnvelopeSparkles();
+    }
+}
+
+if (waxSeal) {
+    waxSeal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleEnvelope();
+    });
+}
+
+if (envelope) {
+    envelope.addEventListener('click', () => {
+        toggleEnvelope();
+    });
+}
+
+// --- 3D Hover Tilt Effect for Gallery ---
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+galleryItems.forEach(item => {
+    item.addEventListener('mousemove', (e) => {
+        const rect = item.getBoundingClientRect();
+        const x = e.clientX - rect.left; // x position within the element
+        const y = e.clientY - rect.top;  // y position within the element
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -15; // Max rotation 15deg
+        const rotateY = ((x - centerX) / centerX) * 15;
+
+        item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        item.style.transition = 'transform 0.1s. ease'; // fast transition while moving
+        
+        const img = item.querySelector('img');
+        if (img) {
+            img.style.transform = 'scale(1.15)'; // Add deeper zoom
+        }
+    });
+
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        item.style.transition = 'transform 0.5s ease'; // slower transition to reset
+        const img = item.querySelector('img');
+        if (img) {
+            img.style.transform = 'scale(1)'; // reset image zoom
+        }
+    });
+});
+
+// --- Simple Parallax for Hero ---
+const heroGlass = document.querySelector('.hero .glass-panel');
+window.addEventListener('mousemove', (e) => {
+    if(!heroGlass) return;
+    const x = (window.innerWidth / 2 - e.pageX) / 50;
+    const y = (window.innerHeight / 2 - e.pageY) / 50;
+    heroGlass.style.transform = `translate(${x}px, ${y}px)`;
+});

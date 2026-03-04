@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
     <!-- Music Popup -->
     <div class="music-overlay" id="musicOverlay">
         <div class="music-modal">
@@ -180,6 +182,33 @@
                 <span class="msg-decor">✨💕✨</span>
                 <p id="typewriterText"></p>
                 <span class="msg-decor">✨💕✨</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="envelope-section hidden">
+        <h2>A Special Note</h2>
+        <p class="envelope-subtitle">Tap the seal to open your letter 💌</p>
+        <div class="envelope-scene">
+            <div class="envelope-glow"></div>
+            <div class="envelope-sparkles" id="envelopeSparkles"></div>
+            <div class="envelope-wrapper" id="envelopeWrapper">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="letter" id="letterCard">
+                        <div class="letter-decor-top">❦</div>
+                        <p class="letter-greeting">My dearest Sudeshna,</p>
+                        <p class="letter-body">Every moment with you feels like a beautiful dream I never want to wake up from. You are the poetry I could never write, the song I could never sing, and the magic I could never explain.</p>
+                        <p class="letter-closing">Yours always & forever,<br><span class="letter-heart">❤️</span></p>
+                        <div class="letter-decor-bottom">❦</div>
+                    </div>
+                    <div class="envelope-front"></div>
+                    <div class="envelope-flap-shadow"></div>
+                    <div class="flap"></div>
+                    <div class="wax-seal" id="waxSeal">
+                        <span>♥</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
